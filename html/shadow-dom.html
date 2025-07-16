@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title> Shadow DOM </title>
+    <style>
+        span{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="host"></div>
+    <span>I'm not in the shadow DOM</span>
+
+    <div id="host1">
+    <template shadowrootmode="open">
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+    <span>I'm in the shadow DOM</span>
+    </template>
+</div>
+
+
+   <script>
+
+    const sheet = new CSSStyleSheet(); 
+    sheet.replaceSync("span { color: violet;}");
+
+    const host = document.querySelector("#host");
+
+    const shadow = host.attachShadow({ mode: "open" });
+    shadow.adoptedStyleSheets = [sheet];
+
+    const span = document.createElement("span");
+    span.textContent = "I'm in the shadow DOM";
+    shadow.appendChild(span);
+    
+</script>
+
+</body>
+</html>

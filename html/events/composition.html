@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Composition events </title>
+</head>
+
+<body>
+
+    <input type="text" id="inputBox" placeholder="Type here" />
+    <div id="log"></div>
+
+<script>
+  const input = document.getElementById("inputBox");
+  const log = document.getElementById("log");
+
+  input.addEventListener("compositionstart", () => {
+    log.innerText = "Composition has been started";
+  });
+
+  input.addEventListener("compositionupdate", (event) => {
+    log.innerText = "Composing: " + event.data;
+  });
+
+  input.addEventListener("compositionend", (event) => {
+    log.innerText = "Composition has been ended /n Final text: " + event.data;
+  });
+</script>
+
+</body>
+</html>
+
+
+

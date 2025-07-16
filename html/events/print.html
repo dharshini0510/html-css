@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Print Event</title>
+</head>
+
+<body>
+
+  <div id="status"> This is example for print</div>
+
+  <script>
+
+    const status = document.getElementById("status");
+
+     window.addEventListener("beforeprint", () => {
+     status.innerText += "\n Preparing for printing";
+  });
+
+    window.addEventListener("afterprint", () => {
+    status.innerText = "\n Print preview closed";
+  });
+</script>
+
+</body>
+</html>

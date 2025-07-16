@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clipboard Events</title>
+
+  <style>
+    :is(#cutcopy, #paste){
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <textarea id="cutcopy"> This is an example for clipboard events  </textarea> <br><br>
+  <textarea id="paste">  </textarea> <br><br>
+  <div id="status"></div>
+
+  <script>
+    const cutcopy = document.getElementById("cutcopy");
+    const paste = document.getElementById("paste");
+    const status = document.getElementById("status");
+
+    let selectedText;
+
+      cutcopy.addEventListener("copy", (event) => {
+      selectedText =  document.getSelection().toString();
+       status.innerText = " You copied some text \n Copied text: " + selectedText + " \n";
+      
+    });
+
+    cutcopy.addEventListener("cut", (event) => {
+     selectedText =  document.getSelection().toString();
+     event.preventDefault();
+     event.clipboardData.setData("text",selectedText.toUpperCase());
+     status.innerText = " You cut some text \n Cut text: " + selectedText + " \n";
+    });
+
+    paste.addEventListener("paste", (event) => {
+      const pastedData = event.clipboardData.getData("text");
+      status.innerText = "You pasted some text \n Pasted text: " + pastedData;
+    });
+  </script>
+
+</body>
+</html>
+ 

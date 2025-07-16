@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Keyboard</title>
+    </head>
+
+    <body>
+        <input id="kup" placeholder="Click here" > <br><br>
+        <input id="kdown" placeholder="Click here" >
+        <input id="kpress" placeholder="Click here" >
+        <p id="log"></p>
+
+        <script>
+            const kup = document.getElementById("kup");
+            const kdown= document.getElementById("kdown");
+            const kpress = document.getElementById("kpress");
+            const log = document.getElementById("log");
+
+            kup.addEventListener("keyup",(e)=>{
+                log.textContent = ` Released : ${e.code}`;
+            });
+
+            kdown.addEventListener("keydown",(e)=>{
+                log.textContent = ` Pressed: ${e.code}`;
+            });
+
+            kpress.addEventListener("keypress",(e)=>{
+                log.textContent = ` Pressed and released: ${e.code}`;
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mouse Events</title>
+
+  <style>
+    #box {
+      width: 200px;
+      height: 150px;
+      background-color: lightblue;
+      margin: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #box.grow{
+        background-color: blueviolet;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div id="box"> Click Me </div>
+<p id="log"></p>
+
+<script>
+  const box = document.getElementById("box");
+  const log = document.getElementById("log");
+
+ box.addEventListener("auxclick", () => {
+    log.innerText = "Clicked right side";
+  });
+
+  box.addEventListener("click", () => {
+    log.innerText = "Clicked left side";
+  });
+
+  box.addEventListener("dblclick", () => {
+    log.innerText = "Double-clicked!";
+  });
+
+  box.addEventListener("mousedown", () => {
+    log.innerText = "Mouse button down";
+  });
+
+  box.addEventListener("mouseup", () => {
+    log.innerText = "Mouse button up";
+  });
+
+  box.addEventListener("mouseenter", () => {
+    log.innerText = "Mouse entered the box";
+    box.classList.add("grow");
+  });
+
+  box.addEventListener("mouseleave", () => {
+    log.innerText = "Mouse left the box";
+    box.classList.remove("grow");
+  });
+
+  box.addEventListener("mousemove", () => {
+    log.innerText = "Mouse is moving inside the box";
+    box.classList.add("grow");
+  });
+</script>
+
+</body>
+</html>

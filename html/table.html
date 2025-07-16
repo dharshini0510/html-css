@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title> Table tag</title> 
+</head>
+
+<body>
+
+    <h2> TABLE </h2>
+     <table border="1">
+        <caption> Person details</caption>
+
+        <thead>
+             <tr>
+               <th scope="col">Name</th>
+               <th scope="col">Age</th>
+             </tr>
+        </thead>
+
+        <tbody> 
+            <tr>
+              <td>Jill</td>
+              <td>43</td>
+            </tr>
+
+           <tr>
+              <td>Jackson</td>
+             <td>57</td>
+           </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td> Total age</td>
+                <td> 100 </td>
+            </tr>
+        </tfoot>   
+     
+</table>
+
+
+
+<h2> COLSPAN </h2>
+    <table border="1">
+  <tr>
+    <th colspan="2" scope="colgroup" id="nameheader">Name</th>
+    <th scope="col" id="ageheader">Age</th>
+  </tr>
+  <tr>
+    <td headers="nameheader">Jill</td>
+    <td headers="nameheader">Smith</td>
+    <td headers="ageheader">43</td>
+  </tr>
+  <tr>
+    <td headers="nameheader">Eve</td>
+    <td headers="nameheader"> Jackson</td>
+    <td headers="ageheader">57</td>
+  </tr>
+</table>
+
+
+
+<h2> ROWSPAN</h2>
+<table border="1">
+  <tr>
+    <th rowspan="2" scope="rowgroup">Name</th>
+    <td>Jill</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>12345</td>
+  </tr>
+</table>
+
+
+</body>
+
+</html>
