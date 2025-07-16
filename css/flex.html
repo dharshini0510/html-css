@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Flex</title>
+
+    <style>
+        .flex-container{
+            display: flex;
+            background-color: coral;
+        }
+
+        .flex-container > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .flex-direction{
+            display: flex;
+            background-color: lawngreen;
+            flex-direction: column;            
+        }
+
+        .flex-direction > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .flex-wrap{
+            display: flex;
+            background-color: violet;
+            flex-wrap: wrap ;                
+        }
+
+        .flex-wrap > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .flex-justify{
+            display: flex;
+            background-color: gray;
+            justify-content: center;         
+        }
+
+        .flex-justify > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .flex-align-items{
+            display: flex;
+            background-color: blue;   
+            align-items: center;           
+            height: 200px;          
+        }
+
+        .flex-align-items > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .flex-align-content{
+            display: flex;
+            background-color: gold;
+            flex-wrap: wrap;
+            height: 600px;
+            align-content: center;                     
+        }
+
+        .flex-align-content > div{
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        p{
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        .flex-order{
+            display: flex;
+            align-items: stretch;
+            background-color: coral;
+        }
+
+        .flex-order > div{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .flex-grow{
+            display: flex;
+            align-items: stretch;
+            background-color: aqua;
+        }
+
+        .flex-grow > div{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .flex-shrink{
+            display: flex;
+            align-items: stretch;
+            background-color: gold;
+        }
+
+        .flex-shrink > div{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .flex-basis{
+            display: flex;
+            align-items: stretch;
+            background-color: green;
+        }
+
+        .flex-basis > div{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .flex-align-self{
+            display: flex;
+            background-color: violet;
+            height: 200px;
+        }
+
+        .flex-align-self > div{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Flex-CONTAINER </h1>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <br>
+
+    <p>1. flex-direction</p>
+    <div class="flex-direction">
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <br>
+    
+    <p>2. flex-wrap</p>
+    <div class="flex-wrap">
+        <div>1</div> <div>2</div>
+        <div>3</div> <div>4</div>
+        <div>5</div> <div>6</div>
+        <div>7</div> <div>8</div>
+        <div>9</div> <div>10</div>
+        <div>11</div>
+    </div>
+    <br>
+    
+    <p>3. flex-justify</p>
+    <div class="flex-justify">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+
+    <p>4. flex-align-items</p>
+    <div class="flex-align-items">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    
+    <p>5. flex-align-content</p>
+    <div class="flex-align-content">
+        <div>1</div> <div>2</div>
+        <div>3</div> <div>4</div>
+        <div>5</div> <div>6</div>
+        <div>7</div> <div>8</div>
+        <div>9</div> <div>10</div>
+        <div>11</div>
+    </div><br>
+
+
+
+     <h2> FLEX ITEMS</h2>
+
+    <p> 1.Flex-order</p>
+    <div class="flex-order">
+        <div style="order: 3;"> 1 </div>
+        <div style="order: 2;"> 2 </div>
+        <div style="order: 4;"> 3 </div>
+        <div style="order: 1;"> 4 </div>
+    </div>
+    <br>
+    
+    <p> 2.Flex-grow</p>
+    <div class="flex-grow">
+        <div style="flex-grow: 1;"> 1 </div>        
+        <div style="flex-grow: 1;"> 2 </div>
+        <div> 3 </div>
+        <div style="flex-grow: 8;"> 4 </div>
+    </div>
+    <br>
+    
+    <p> 3.Flex-shrink</p>
+    <div class="flex-shrink">
+        <div> 1 </div>
+        <div style="flex-shrink: 0;"> 2 </div>      
+        <div> 3 </div>
+        <div style="flex-shrink: 4;"> 4 </div>
+        <div>5</div> <div>6</div>
+        <div>7</div> <div>8</div>
+        <div>9</div> <div>10</div>
+        <div>11</div>  <div>11</div>  <div>11</div>  <div>11</div>  <div>11</div>
+    </div>
+    <br>
+    
+    <p> 4.Flex-basis</p>
+    <div class="flex-basis">
+        <div> 1 </div>                              
+        <div> 2 </div>
+        <div style="flex-basis: 200px;"> 3 </div>
+        <div> 4 </div>
+    </div>
+    <br>
+     
+    <p> 6.Flex-align-self</p>
+    <div class="flex-align-self">
+        <div> 1 </div>
+        <div style="align-self: flex-end;"> 2 </div>    
+        <div style="align-self: center;"> 3 </div>
+        <div> 4 </div>
+    </div>
+    <br>
+
+</body>
+
+</html>

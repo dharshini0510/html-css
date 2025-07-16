@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+    <title> Selectors</title> 
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+     <h1> CSS</h1>
+     <h2> SElectors</h2>
+     <p> This is name selector</p>
+     <p class="one"> This is class selector</p>
+     <p id="unique">  This is id selector</p>
+      <h3> Universal selctor</h3>
+      <h4> UNiversal selector</h4>
+
+
+    <h2> descendant combinator</h2>
+    <div class="descendant">
+      <p>Paragraph 1 in the div.</p>
+      <p>Paragraph 2 in the div.</p>
+      <section>  <p>Paragraph 3 in the div.</p> </section>
+    </div>
+    
+
+    <h2> child combinator</h2>
+    <div class="child"> 
+      <p>Paragraph 1 in the div.</p>
+      <p>Paragraph 2 in the div.</p>
+      <section> <p>Paragraph 3 in the div</p> </section>
+    </div>
+
+
+    <h2> Next sibling</h2>
+    <div class="nextsibling">
+      <p>Paragraph 1 in the div.</p>
+      <p>Paragraph 2 in the div.</p>
+    </div>
+    <p>Paragraph 3. After a div.</p>
+    <p>Paragraph 4. After a div.</p>
+
+
+     <h2> subsequent sibling</h2>
+     <div class="subsequent">
+       <p>Paragraph 2.</p>
+     </div>
+     <p>Paragraph 3.</p>
+     <code>Some code.</code>
+     <p>Paragraph 4.</p>
+
+
+    <h2> Anchor pseudo class</h2>
+    <a href="https://www.google.com/"> Google </a> <br>
+    <a class="highlight" href="https://www.google.com/"> Google </a>
+
+    <div class="dhover"> HOver on division</div>
+
+    <div class="tooltip"> <p> THis is tooltip hover </p></div>
+
+    <div class="firstchild1">
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+    </div>
+
+    <div class="firstchild2">
+       <p>This <i>is </i> some <i>text</i>.</p>
+       <p>This is some text.</p>
+    </div>
+
+    <div class="firstchild3">
+       <p>This <i>is</i> some <i>text></i></p>
+       <p>This is some text.</p>
+    </div>
+
+    <h2> pseudo elements</h2>
+    <p class="firstline1">A paragraph is a distinct unit of writing, typically composed of multiple sentences, that focuses on a single idea or topic. It serves to organize and structure written work, making it easier for readers to follow the author's train of thought. </p>
+
+    <p class="pbefore"> Pseudo element example</p>
+    <p class="pafter"> Pseudo element example</p>
+
+   <ul>
+     <li>Coffee</li>
+     <li>Tea</li>
+     <li>Milk</li>
+   </ul>
+
+   <ol>
+     <li>First</li>
+     <li>Second</li>
+     <li>Third</li>
+   </ol>
+
+   <a href="https://www.google.com/" target="_self" title="google one"> Google </a> <br><br>
+   <a href="https://www.google.com/" target="_blank" title="two"> Google </a> <br><br>
+   <a href="https://www.google.com/" target="_top" title="google"> Google </a>
+
+   <p class="top"> Attribute selector top</p>
+   <p class="top-class"> Attribute selector top-class</p>
+   <p class="topclass"> Attribute selector topclass</p>  <br><br>
+
+   <p class="one"> Attribute selector one</p>
+   <p class="one-class"> Attribute selector one-class</p>
+   <p class="oneclass"> Attribute selector oneclass</p> <br><br>
+
+   <p class="test"> Attribute selector test</p>
+   <p class="two-test"> Attribute selector two-test</p>
+   <p class="twotest"> Attribute selector twotest</p>
+
+   <p class="bottom"> Attribute selector bottom</p>
+   <p class="yellow"> Attribute selector yellow</p>
+   <p class="owl"> Attribute selector owl</p>
+
+</body>
+
+</html>
