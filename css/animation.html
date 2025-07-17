@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title> Animation </title>
+
+    <style>
+         
+     @keyframes slide {
+     from { left: 0; }
+     to { left: 200px; }
+     }
+    .slide {
+     position: relative;
+     width: 100px;
+     height: 50px;
+     background: lightblue;
+     animation: slide 2s linear 5;  
+    }
+
+
+     @keyframes fadeIn {
+     from { opacity: 0; }
+      to { opacity: 1; }
+     }
+    .fade {
+     width: 100px;
+     height: 50px;
+     background: pink;
+     animation: fadeIn 3s ease-in 5; 
+  }
+
+
+    @keyframes zoom {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); } 
+    }
+   .zoom {
+    width: 100px;
+    height: 50px;
+    background: yellow;
+    animation: zoom 2s ease-in-out 5;
+    }
+
+
+    @keyframes spin {
+     from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+    }
+   .spin {
+     width: 100px;
+     height: 100px;
+     background: lightgreen;
+     animation: spin 2s linear infinite;
+    }
+
+
+    @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    }
+   .bounce {
+    width: 100px;
+    height: 50px;
+    background: orange;
+    animation: bounce 1s ease-in-out infinite;
+     }
+
+</style>
+
+</head>
+
+<body>
+
+    <h2> SLIDE </h2>
+    <div class="slide">Slide</div>
+
+    <h2> FADE IN </h2>
+    <div class="fade">Fade In</div>
+
+    <h2> ZOOM IN </h2>
+    <div class="zoom">Zoom</div>
+
+    <h2>  ROTATE </h2>
+    <div class="spin">Spin</div>
+
+    <h2> BOUNCE </h2>
+    <div class="bounce">Bounce</div>
+</body>
+
+</html>
