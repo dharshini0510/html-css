@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ReadyStatechange</title>
+</head>
+
+<body>
+    <div id="status"></div>
+<script>
+
+    const status  = document.getElementById("status");
+
+        status.innerText ="Current readyState:"+ document.readyState +"\n";
+
+       document.addEventListener("readystatechange", () => {
+         status.innerText += "Changed to:"+ document.readyState + "\n";
+
+       if (document.readyState === "interactive") {
+       status.innerText += "HTML is parsed \n";
+       }
+
+       if (document.readyState === "complete") {
+        status.innerText += "Everything is loaded";
+       }
+      });
+  
+  
+</script>
+
+</body>
+</html>
