@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> <title>Performance event </title> </head>
+
+<body>
+
+  <button id="run">Run</button>
+  <div id="output"></div>
+
+  <script>
+    const btn = document.getElementById("run");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", () => {
+      performance.mark("start"); 
+
+      for (let i = 0; i < 1000000; i++) {
+        Math.sqrt(i);
+      }
+
+      performance.mark("end"); 
+
+    
+      performance.measure("myTask", "start", "end");
+
+      const time = performance.getEntriesByName("myTask")[0].duration;
+      output.innerText = `Took ${time.toFixed(2)} milliseconds to run`;
+    });
+
+  </script>
+
+</body>
+</html>
