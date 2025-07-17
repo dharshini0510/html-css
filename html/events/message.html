@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title> message event</title>
+
+</head>
+
+<body>
+
+  
+  <iframe src="iframe.html" width="300" height="150"></iframe>
+
+  <div id="log">Waiting for message</div>
+
+  <script>
+
+    const log = document.getElementById("log");
+
+    window.addEventListener("message", (event) => {
+      log.innerText = "Message received: " + event.data;
+    });
+
+    window.addEventListener("messageerror", (event) => {
+      log.innerText = "There is some error in receiving the message" + event;
+    });
+
+  </script>
+
+</body>
+</html>
