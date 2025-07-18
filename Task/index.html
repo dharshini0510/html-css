@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> Task </title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li> <a href="#"> About </a> </li>
+                <li> <a href="#"> Login </a> </li>
+                <li> <a href="#"> Contact </a> </li>
+            </ul>
+        </nav> <br><br>
+
+        <form>
+            <table>
+                <tr>
+                    <td> <label for="name"> Name :</label> </td>
+                    <td>   <input type="text" id="name" name="fullname" placeholder="Enter your name" required > </td>
+                </tr>
+                <tr>
+                    <td> <label for="email"> Email: </label> </td>
+                    <td> <input type="email" id="email" name="emailid" placeholder="Enter your valid email" required></td>
+                </tr>
+                 <tr>
+                    <td> <label for="password"> Password: </label> </td>
+                    <td> <input type="password" id="password" name="password" required> </td>
+                </tr>
+                 <tr>
+                    <td>  <label for="mobile"> Mobile number: </label> </td>
+                    <td> <input type="tel" id="mobile" name="mobilenumber" pattern="[0-9]{10}" placeholder="Enter your valid mobile number" required> </td>
+                </tr>
+                 <tr>
+                    <td> <label for="age"> Age: </label> </td>
+                    <td> <input type="number" id="age" name="age" min="18" placeholder="Enter your age" required> </td>
+                </tr>
+                 <tr>
+                    <td>  <button type="submit"> Submit </button> </td>
+                    <td> <button type="reset"> Reset </button> </td>
+                 </tr>
+            </table>            
+        </form>
+
+        <audio controls autoplay loop muted preload="auto"> <source src="Images/music.mp3" type="audio/mp3"> 
+            <p> Oops audio doesn't support! Please find the <a href="Images/music.mp3"> link </a> for the audio </p> 
+        </audio> <br><br>
+
+        <video controls autoplay loop poster="nature1.jpeg"> 
+            <source src="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4" type="video/mp4"> 
+             <p> Oops video doesn't support! Please find the <a href="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4"> link </a> for the video </p> 
+        </video> <br><br>
+
+        <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="YouTube video"
+          frameborder="0" allow="autoplay"
+          allowfullscreen>
+       </iframe>
+
+
+    </body>
+</html>

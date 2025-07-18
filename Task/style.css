@@ -1,0 +1,31 @@
+ nav{
+    border: 1px solid black;
+    background-color: blanchedalmond;
+ }
+ 
+ ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+ }
+
+ li{
+    margin-right: 50px;
+ }
+
+ a{
+    color: brown;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+ }
+
+ a:hover{
+    color: black;
+    background-color: aqua;
+}
+
+video{
+    height: 200px;
+    width: 200px;
+}

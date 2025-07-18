@@ -1,0 +1,34 @@
+HTML TASK QUESTIONS :
+
+1.Crete a navigation bar at the top and some dummy content below it.
+  Use <nav>, represent it as a link and add some CSS styles.
+
+2.Create a form with validation:
+  Name (required)
+  Email (required and valid email format)
+  Password (required)
+  Phone number (10 digits only)
+  Age (people above 18 only allowed)
+  Submit and reset button
+ 
+  Use required, pattern, label, and correct input types.
+  
+3.Create a Custom Audio Player.Embed an audio file with <audio> tag.
+  Add controls, autoplay, and preload attributes.
+  Include a fallback message for browsers that don’t support audio.
+  
+  Create an HTML5 Video Player.Use the <video> tag to embed a video.
+  Include:Poster image, Custom width/height,Controls enabled,Fallback text
+  
+   Embed a YouTube Video with Custom Settings.Embed a YouTube video:
+   Start at 30 seconds,No related videos shown after,Hide controls
+  
+4.Display an image gallery with 6 images arranged in 3 columns.
+  Use <div>, <img>, and CSS grid or flexbox.
+  
+5.Create a webpage using semantic elements.
+  Use <header>,<nav>, <article>, <section>, <aside>, and <footer>  
+  
+6.Create a web page with internal navigation (jump links):
+   Link to sections like "Introduction", "Gallery", "Contact" on the same page.
+   Use <a href="#section-id"> and <section id="section-id">.
