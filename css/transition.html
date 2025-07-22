@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <style>
+    .box1 {
+      width: 150px;
+      height: 100px;
+      background-color: skyblue;
+      transition: width 0.5s ease; 
+    }
+
+    .box1:hover {
+      width: 200px;
+    }
+
+    .box2 {
+      width: 150px;
+      height: 100px;
+      background-color: skyblue;
+      transition: background-color 0.5s; 
+    }
+
+    .box2:hover {
+      background-color: coral;
+    }
+
+    .box3 {
+      width: 150px;
+      height: 100px;
+      background-color: skyblue;
+      transition: all 0.5s ease; 
+    }
+
+    .box3:hover {
+      background-color: pink;
+      width: 200px;
+      height: 120px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h2> Changing width </h2>  
+  <div class="box1">Hover me!</div>
+
+  <h2> Changing bg color </h2>  
+  <div class="box2">Hover me!</div>
+
+  <h2> Changing all </h2>  
+  <div class="box3">Hover me!</div>
+
+</body>
+
+</html>

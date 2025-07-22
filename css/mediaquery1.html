@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Media query</title> 
+
+    <style>
+        h1{
+                color: red;
+            }
+
+        input[type="checkbox"]:checked {
+             background: gray;
+         }  
+         
+         .color{
+            color:red;
+         }
+         
+         .height{
+            padding: 20px;
+         }
+
+         .width{
+            padding: 20px;
+         }
+
+         h2{
+                color: red;
+            }
+
+
+            @media (any-hover: none) {
+              h1:hover {
+                 background: yellow;
+              }
+            }
+
+
+           @media (any-pointer: fine) {
+             input[type="checkbox"] {
+               appearance: none;
+               width: 15px;
+               height: 15px;
+               border: 1px solid blue;
+             }
+           }
+
+           @media (any-pointer: coarse) {
+             input[type="checkbox"] {
+               appearance: none;
+               width: 30px;
+               height: 30px;
+               border: 1px solid red;
+             }
+           }
+
+
+           @media (color) {
+             .color {
+               color: aqua;
+             }
+            }
+
+
+            @media (display-mode: fullscreen) {
+              body {
+    
+                    border: 5px solid black;
+               }
+             }
+
+             @media (display-mode: browser) {
+              body {
+    
+                    border: 5px solid gold;
+               }
+             }
+
+
+             @media (prefers-color-scheme: light) {
+              body {
+                  background: burlywood
+               }
+             }
+          
+
+              @media (height: 360px) {
+               .height {
+                     border: 1px solid black;
+            }
+           }
+
+            @media (min-height: 500px) {
+               .height {
+                   border: 3px dashed black;
+            }
+           }
+
+           @media (max-height: 300px) {
+               .height {
+                   border: 6px dotted black;
+            }
+           }
+
+
+           @media (orientation: landscape) {
+             body {
+                 margin-left: 100px;
+            }
+          }
+
+           @media (orientation: portrait) {
+             body {
+                  margin-top: 100px;
+            }
+          }
+
+
+          @media (width: 360px) {
+               .width {
+                     border: 1px solid green;
+            }
+           }
+
+            @media (min-width: 500px) {
+               .width{
+                   border: 3px dashed green;
+            }
+           }
+
+           @media (max-width: 300px) {
+               .width {
+                   border: 6px dotted green;
+            }
+           }
+           
+
+           @media print {
+                h2{
+                    color: green;
+                }
+            }
+
+            @media print and (orientation: landscape){
+                h2{
+                    color: yellow;
+                }
+            }
+
+             @media print and (orientation: portrait){
+                h2{
+                    color: orange;
+                }
+            }
+            
+    </style>
+
+</head>
+
+
+<body>
+      
+     <h3> HOVER </h3>
+    <h1>hello</h1>
+
+
+    <h3> POINTER </h3>
+    <input type="checkbox" /> Click here
+
+    
+    <h3> COLOR </h3>
+    <p class="color"> Example for color media query</p>
+
+    
+    <h3> HEIGHT </h3>
+    <div class="height">
+      <p>Example for height</p>
+    </div> <br><br>
+
+    
+    <h3> WIDTH </h3>
+    <div class="width">
+      <p>Example for width</p>
+    </div>
+
+
+    <h3> PRINT </h3>
+    <h2> Print </h2>
+
+</body>
+
+</html>
