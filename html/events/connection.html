@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Connection Events</title>
+
+</head>
+
+<body>
+
+  <div id="status">Checking connection </div>
+
+
+  <script>
+    const status = document.getElementById("status");
+
+    window.addEventListener("online", ()=>{
+        status.innerText = navigator.onLine ? "ONLINE \n You are now connected to the network " : " OFFLINE \n The network connection has been lost";
+    });
+
+    window.addEventListener("offline", ()=>{
+         status.innerText = navigator.onLine ? "ONLINE \n You are now connected to the network " : " OFFLINE \n The network connection has been lost";
+    });
+
+    status.innerText = navigator.onLine ? "ONLINE \nYou are now connected to the network" : "OFFLINE \nThe network connection has been lost";
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Events Demo</title>
+</head>
+<body>
+  <button id="payBtn">Pay Now</button>
+
+  <script>
+    const payBtn = document.getElementById("payBtn");
+
+    payBtn.addEventListener("click", async () => {
+      const paymentDetails = {
+        total: {
+          label: "Total",
+          amount: { currency: "USD", value: "10.00" }
+        }
+      };
+
+      const paymentMethods = [{
+        supportedMethods: "basic-card",
+        data: {
+          supportedNetworks: ["visa", "mastercard"]
+        }
+      }];
+
+      try {
+        const request = new PaymentRequest(paymentMethods, paymentDetails);
+
+      
+        request.addEventListener("shippingaddresschange", (event) => {
+          console.log("Shipping address changed");
+        });
+
+      
+        const response = await request.show();
+
+        console.log("Payment made by:", response.details.cardNumber);
+        
+        await response.complete("success");
+        alert("Payment Successful!");
+
+      } catch (err) {
+        console.log("Payment failed or was cancelled", err);
+      }
+    });
+  </script>
+</body>
+</html>

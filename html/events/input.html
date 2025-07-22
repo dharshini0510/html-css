@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INput</title>
+    </head>
+
+    <body>
+        <form id="form">
+        Upload resume: <input type="file" id="file"><br><br>
+        Age: <input type="number" id="age" name="age" min="18" max="100" required> <br><br>
+        Search: <input type="search" id="search"> <br><br>
+        <input type="text" id="text" value="SElect event">
+
+
+        </form>
+
+        <p id="result"></p>
+
+
+        <script>
+
+            const form=document.getElementById("form");
+            const file = document.getElementById("file");
+             const age = document.getElementById("age");
+             const search = document.getElementById("search"); 
+             const text = document.getElementById("text");
+             const result = document.getElementById("result");
+
+              file.addEventListener("cancel", () => {
+                result.textContent = "Canceled";
+            });
+
+            file.addEventListener("change", () => {
+            if (file.files.length === 1) {
+             result.textContent = "Resume uploaded"; }
+             });
+
+              age.addEventListener("invalid", (event) => {
+             result.innerText = "You are not eligible! YOur age shiuld be between 18 and 100"
+             });
+
+             search.addEventListener("search", () => {
+              result.innerText=`The term searched for was ${search.value}`;
+            });
+
+
+             text.addEventListener("select", (event) => {
+             const selectedText = text.value.substring(text.selectionStart, text.selectionEnd);
+             result.innerText = `You selected: ${selectedText}`;
+             });
+            
+        </script>
+    </body>
+</html>

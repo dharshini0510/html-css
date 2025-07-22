@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>  Autonomous Custom element </title>
+</head>
+
+<body>
+
+<my-greeting name="Priya"></my-greeting>
+
+<div id="status"> </div>
+
+<script>
+
+   const status = document.getElementById("status") 
+
+   class MyGreeting extends HTMLElement {
+    constructor() {
+      super(); 
+      status.innerText =  "constructor: Element created";
+    }
+
+     static get observedAttributes() {
+      return ["name"];
+    }
+
+    connectedCallback() {
+      this.innerHTML = "<h2>Hello from a custom element!</h2>";
+     status.innerText="connectedCallback: Added to DOM\n";
+    }
+
+    disconnectedCallback() {
+     status.innerText="disconnectedCallback: Removed from DOM\n";
+    }
+
+    adoptedCallback() {
+     status.innerText="adoptedCallback: Moved to a new document\n";
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      status.innerText += "Attribute " + name + " changed from " + oldValue + " to "+ newValue;
+      this.innerHTML += `<h2>Hello ${newValue} from a custom element!</h2>`;
+    }
+  }
+   
+
+  customElements.define("my-greeting", MyGreeting);
+
+  const greeting = document.querySelector("my-greeting")
+  greeting.setAttribute("name", "Dharshini");
+
+
+  
+</script>
+
+</body>
+
+</html>

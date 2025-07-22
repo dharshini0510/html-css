@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transition Events</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      transition: width 2s ease;
+    }
+
+    #box.grow {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="start">Start Transition</button>
+  <button id="stop">Stop Transition</button> <br><br>
+
+  <div id="box"></div>
+
+  <div id="log"></div>
+
+  <script>
+    const btn = document.getElementById("start");
+    const sbtn = document.getElementById("stop");
+    const box = document.getElementById("box");
+    const log = document.getElementById("log");
+
+    btn.addEventListener('click',()=> {
+        box.classList.toggle("grow");
+    })
+    box.addEventListener("transitionstart", (e) => {
+      log.innerText = `Transition started on: ${e.propertyName}`;
+    });
+
+    box.addEventListener("transitionend", (e) => {
+      log.innerText = `Transition ended on: ${e.propertyName}`;
+    });
+
+    box.addEventListener("transitioncancel", (e) => {
+      log.innerText = `Transition canceled on: ${e.propertyName}`;
+    });
+
+    sbtn.addEventListener('click',()=>{
+        box.style.transition = "none";
+    })
+  </script>
+
+</body>
+</html>

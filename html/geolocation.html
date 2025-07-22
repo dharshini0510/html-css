@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geolocation</title>
+</head>
+<body>
+
+  <button id="btn" type="button">Get Location</button> <br><br>
+  <button id="start" type="button"> Start tracking</button>
+  <button id="stop" type="button">Stop</button>
+  <p id="output"></p>
+
+  <script>
+    const btn = document.getElementById("btn"); 
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    const output = document.getElementById("output");
+
+    let watchId;
+
+    btn.addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            output.innerText = " Current location: \n Latitude: "  + position.coords.latitude + "\n  Longitude: " + position.coords.longitude;
+          },
+          (error) => {
+            output.innerText = `Error: ${error.message}`;
+          }
+        );
+      } else {
+        output.innerText = "Geolocation is not supported by your browser.";
+      }
+    });
+
+    start.addEventListener('click',()=>{
+        watchId = navigator.geolocation.watchPosition(
+          (position) => {
+            output.innerText = " Tracking has been started \n Latitude: "  + position.coords.latitude + "\n  Longitude: " + position.coords.longitude;
+          })
+    });
+
+    stop.addEventListener('click', () => {
+      if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+        output.innerText = "Tracking has been stopped";
+      }
+    });
+  </script>
+
+</body>
+</html>

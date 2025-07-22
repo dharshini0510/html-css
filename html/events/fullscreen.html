@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fullscreen Events </title>
+  <style>
+    #box {
+      width: 200px;
+      height: 150px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box"> Example for full screen <br>
+    <div id="log"></div>
+</div> <br><br>
+<button id="full">Go Fullscreen</button>
+
+
+<script>
+  const box = document.getElementById("box");
+  const log = document.getElementById("log");
+  const btn = document.getElementById("full");
+
+  btn.addEventListener('click',()=>{
+    if (box.requestFullscreen) {
+      box.requestFullscreen();
+    } else {
+      alert("Fullscreen not supported in this browser.");
+    }
+  })
+
+  document.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement) {
+      log.innerText = "Entered fullscreen " + document.fullscreenElement;
+    } else {
+      log.innerText = "Exited fullscreen";
+    }
+  });
+
+  document.addEventListener("fullscreenerror", () => {
+    log.innerText = "Fullscreen request has been failed";
+  });
+</script>
+
+</body>
+</html>

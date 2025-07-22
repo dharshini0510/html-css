@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> WAI - ARIA </title>
+
+    <style>
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="alert('deleted')"> <img src="trash-icon.png"> </button> <br><br>
+
+    <button aria-label="Delete">
+        <img src="trash-icon.png" alt="trash icon image">
+    </button> <br><br>
+
+
+    <div aria-hidden="true">
+         This text is invisible to screen readers.
+   </div> <br><br>
+
+    <div role="heading" aria-level="2">
+        This is a Subheading
+    </div> <br><br>
+    
+    <div role="navigation">
+     <a href="/">Home</a>
+     <a href="/about">About</a>
+    </div> <br><br>
+
+
+    <button aria-expanded="false" aria-controls="dropdownMenu" onclick="toggleMenu(this)">
+        Menu
+    </button>
+
+    <ul id="dropdownMenu" hidden>
+       <li><a href="#">Home</a></li>
+       <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul> <br><br>
+
+    <input type="text" name="name" id="name" aria-required="true" />
+
+<script>
+  function toggleMenu(button) {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    const menu = document.getElementById("dropdownMenu");
+    button.setAttribute("aria-expanded", !expanded);
+    menu.hidden = expanded;
+  }
+</script>
+
+    
+</body>
+</html>

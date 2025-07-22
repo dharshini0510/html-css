@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> DOMContentLoad </title>
+</head>
+
+<body>
+
+<button id="dombtn"> Click</button>
+<button id="myBtn">Click Me</button>
+<div id="res"></div>
+
+<script>
+
+    const dbtn = document.getElementById("dombtn");
+    const btn = document.getElementById("myBtn");
+    const res = document.getElementById("res");
+ 
+    
+   dbtn.addEventListener('click',()=>{
+        document.addEventListener("DOMContentLoaded", (event) => {
+        res.innerText="DOM fully loaded and parsed";
+   });
+
+    btn.addEventListener("click", () => {
+      alert("Button clicked");
+    });
+  });
+</script>
+
+</body>
+</html>

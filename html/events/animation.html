@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      position: relative;
+      animation-duration: 2s;
+      animation-name: slide-in;
+      animation-iteration-count: 2
+    }
+
+    @keyframes slide-in {
+      0%   { left: 0;   }
+      50%  { left: 200px; }
+      100% { left: 0;   }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box"></div>
+
+  <p id="log"></p>
+
+  <button id="cancelbtn"> Cancel </button>
+
+  <script>
+    const box = document.getElementById("box");
+    const log = document.getElementById("log");
+    const btn=document.getElementById("cancelbtn");
+
+    box.addEventListener("animationstart", () => {
+      log.innerText = "Animation started";
+    });
+
+    box.addEventListener("animationiteration", () => {
+      log.innerText = "Animation repeated";
+    });
+
+    box.addEventListener("animationend", () => {
+      log.innerText = "Animation ended";
+    });
+
+     box.addEventListener("animationcancel", () => {
+      log.innerText = "Animation cancelled";
+    });
+
+    btn.addEventListener('click',()=>{
+        box.style.animation = "none";
+    })
+  </script>
+
+</body>
+</html>

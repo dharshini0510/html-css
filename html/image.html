@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+     <title> Images and Videos </title>
+</head>
+
+<body>
+
+    <h1> IMAGES </h1>
+    <h2> Normal image:</h2>
+    <img src="nature.jpeg" alt="Nature image">
+
+    <h2> Sub directory image:</h2>
+    <img src="Task/nature1.jpeg" alt="Nature image">
+
+    <h2> height, width</h2>
+    <img src="nature.jpeg" alt="Nature image" width="100px" height="100px">
+
+    <h2> Title</h2>
+    <img src="nature.jpeg" alt="Nature image" title="The image shows the nature picture"> 
+
+    <h2> Using figure and figure captions:</h2>
+    <figure style="border: 1px solid black;">
+        <img src="nature.jpeg" alt="Nature image" width="100px" height="100px">
+        <figcaption> Nature includes many things like weather, organisms, landforms, celestial bodies. </figcaption>
+    </figure>
+
+    <h2> Background image</h2>
+    <p style="background-image: url(nature.jpeg); width: 100px; height: 100px; color: white;" >  This is an example for Background Image</p>
+
+
+    <h2> AUDIO </h2>
+    <audio controls> <source src="music.mp3" type="audio/mp3"> Oops audio doesn't support! </audio> <br><br>
+
+    <audio controls autoplay loop muted >
+    <source src="music.mp3" type="audio/mp3" />
+    <p> Your browser is not support this audio file. Here is a <a href="viper.mp3">link </a> the audio instead </p>
+    </audio>
+
+
+    <h2> VIDEO </h2>
+    <video controls width="200px" height="200px" autoplay loop muted preload="auto" poster="google.png"> <source src="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4" type="video/mp4" title=" A bliss video"> Oops video is not loading!</video> <br><br>
+    
+    <video src="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4" controls>
+    <p>Your browser is not supporting the HTML video. Here is a
+    <a href="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4">link</a> to the video instead </p>
+    </video>
+
+
+    <h2> IFRAME </h2>
+    <iframe src="https://www.wikipedia.org" width="800" height="500"></iframe>
+
+    <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik">
+    </iframe>
+    
+</body>
+
+</html>
