@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>WebSocket</title>
+</head>
+
+<body>
+
+  <button id="send" type="button">Send</button>
+  <button id="close" type="button">Close</button>
+
+  <p id="chatBox"></p>
+
+  <script>
+    
+    const sbtn=document.getElementById("send");
+    const cbtn=document.getElementById("close");
+    const chat=document.getElementById("chatBox");
+
+    const socket = new WebSocket("wss://echo.websocket.org");
+
+    socket.addEventListener("open", () => {
+      chat.innerText += "WebSocket connection opened \n";
+    });
+   
+
+    sbtn.addEventListener('click',()=>{
+      const msg="Hello server!";  
+      socket.send(msg);
+      chat.innerText += "\n You: " + msg + "\n";
+    })
+     
+    socket.addEventListener("message", (event) => {
+    chat.innerText += "Message from server: " + event.data + "\n";
+    });
+
+    socket.addEventListener("error", (event) => {
+    chat.innerText += "WebSocket error: "+ event;
+    });
+
+    socket.addEventListener("close", (event) => {
+    chat.innerText= "The connection has been closed";
+    });
+
+    cbtn.addEventListener('click',()=>{
+        socket.close();
+    })
+
+
+  </script>
+
+</body>
+</html>
+

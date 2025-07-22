@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PushState Demo</title>
+</head>
+<body>
+
+  <h2 id="heading">This is Home Page</h2>
+
+  <button id="about">Go to About</button>
+  <button id="contact">Go to Contact</button>
+  <button id="login">Go to Login</button>
+  <button id="back">Back</button>
+  <button id="forward">Forward</button>
+
+  <script>
+    const heading = document.getElementById("heading");
+
+    const abtn=document.getElementById("about");
+    const cbtn=document.getElementById("contact");
+    const lbtn=document.getElementById("login");
+    const bbtn=document.getElementById("back");
+    const fbtn=document.getElementById("forward");
+
+    abtn.addEventListener('click',()=>{
+      history.pushState({ page: "about" }, "", "/about");
+      heading.innerText = "This is About Page";
+    });
+
+    cbtn.addEventListener('click',()=> {
+      history.pushState({ page: "contact" }, "", "/contact");
+      heading.innerText = "This is Contact Page";
+    });
+
+    lbtn.addEventListener('click',()=> {
+      history.replaceState({ page: "login" }, "", "/login");
+      heading.innerText = "This is Login Page";
+    });
+
+    bbtn.addEventListener('click',()=> {
+      history.back();
+    });
+
+    fbtn.addEventListener('click',()=> {
+      history.forward();
+    });
+
+    window.addEventListener('popstate',(event)=>{
+        if (event.state) {
+        if (event.state.page === "about") {
+          heading.innerText = "This is About Page";
+        } else if (event.state.page === "contact") {
+          heading.innerText = "This is Contact Page";
+        } else if (event.state.page === "login") {
+          heading.innerText = "This is Login Page";
+        }
+      } else {
+        heading.innerText = "This is Home Page";
+      }
+    });
+  </script>
+
+</body>
+</html>

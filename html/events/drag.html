@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag and drop</title>
+  <style>
+    #drag {
+      width: 100px;
+      height: 100px;
+      background: coral;
+      margin-bottom: 20px;
+      border: 1px solid black;
+      padding : 30px;
+    }
+
+    #dragItem{
+      width: 100px;
+      height: 50px;
+      background: white;
+      text-align: center;
+      
+    }
+
+    #dropZone {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      padding : 30px;
+    }
+
+    .highlight{
+        background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="drag">
+    <div id="dragItem"  draggable="true"> This text is draggable </div>
+  </div>
+  <div class="dropzone" id="dropZone"></div>
+
+  <p id="log"></p>
+
+  <script>
+    const dragItem = document.getElementById("dragItem");
+    const dropZone = document.getElementById("dropZone");
+    const log = document.getElementById("log");
+
+    
+
+    dragItem.addEventListener("dragstart", () => {
+      log.innerText = "Drag started";
+    });
+
+    dragItem.addEventListener("drag", () => {
+      console.log("Dragging");
+    });
+
+    dragItem.addEventListener("dragend", () => {
+      log.innerText = "Drag ended";
+    });
+
+   dropZone.addEventListener("dragenter", () => {
+      log.innerText = "Drag entered drop zone";
+      dropZone.classList.add("highlight");
+    });
+
+    dropZone.addEventListener("dragover", (event) => {
+      event.preventDefault(); 
+    });
+
+     dropZone.addEventListener("dragleave", () => {
+      log.innerText = "Drag left drop zone";
+      dropZone.classList.remove("highlight");
+    });
+
+    dropZone.addEventListener("drop", (event) => {
+         dropZone.classList.remove("highlight");
+        dropZone.appendChild(dragItem);
+       console.log("DRooped")
+      
+    });
+
+  </script>
+
+</body>
+</html>

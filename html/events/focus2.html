@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Focus</title>
+    </head>
+    
+    <body>
+        <form id="form">
+    Emil: <input type="email" placeholder="Enter ur email" /> <br>
+    Password: <input type="password" placeholder="Enter ur password" />
+    </form>
+
+    <script>
+    const form = document.getElementById("form");
+
+   form.addEventListener("focusin", (event) => {
+  event.target.style.background = "yellow"; 
+  });
+
+  form.addEventListener("focusout", (event) => {
+  event.target.style.background = "";
+   });
+
+        </script>
+    </body>
+</html>

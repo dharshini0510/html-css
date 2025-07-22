@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Events Demo</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="email" name="email" placeholder="Email" required> <br>
+    
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <p id="log"></p>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const log = document.getElementById("log");
+
+   
+    form.addEventListener("formdata", (event) => {
+
+      const data = event.formData;
+      const username = data.get("username");
+      const email = data.get("email");
+
+      log.innerText = `Username: ${username}\nEmail: ${email}`;
+    });
+
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      const data = new FormData(form);
+    });
+
+
+    form.addEventListener("reset", () => {
+      log.innerText = "Form reset!";
+    });
+
+  </script>
+
+</body>
+</html>

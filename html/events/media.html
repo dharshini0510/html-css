@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Media Events</title>
+
+</head>
+
+<body>
+
+  <video id="video" width="300" controls>
+    <source src="https://v.ftcdn.net/04/15/69/72/700_F_415697290_zBlJFddKioqUgBBlebfKHHd9QQNJadQQ_ST.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video> <br><br>
+
+  <button id="btn"> Show current time </button> <br><br>
+
+  <div id="log"></div>
+
+  <script>
+    const video = document.getElementById("video");
+    const btn = document.getElementById("btn");
+    const log = document.getElementById("log");
+
+    video.addEventListener("play", () => {
+      log.innerText += "Video started playing";
+    });
+
+    video.addEventListener("pause", () => {
+      log.innerText += "Video paused";
+    });
+
+    video.addEventListener("ended", () => {
+      log.innerText += "Video ended";
+    });
+
+    video.addEventListener("volumechange", () => {
+      log.innerText += "Volume changed";
+    });
+
+
+    // btn.addEventListener('click',()=>{
+    //   video.addEventListener("timeupdate", () => {
+    //   log.innerText += "Current time: " + video.currentTime.toFixed(1) + " sec";
+    // });
+    // })
+
+    btn.addEventListener("click", () => {
+      const time = video.currentTime.toFixed(1);
+      log.innerText += "Current time: " + time + " sec";
+    });
+
+    video.addEventListener("error", () => {
+      log.innerText += "Error loading video";
+    });
+  </script>
+
+</body>
+
+</html>

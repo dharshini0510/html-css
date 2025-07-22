@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <title>Database</title>
+
+</head>
+
+<body>
+
+    <button> Click </button>
+
+    <div id="status"></div>
+
+    <script>
+        const btn=document.querySelector("button");
+     const status = document.getElementById("status");  
+
+     btn.addEventListener('click',()=>{
+
+        const request = indexedDB.open("MyDatabase", 1);
+
+        request.onupgradeneeded = (event) => {
+        status.innerText += " DB has been upgraded and created\n";
+        const db = event.target.result;
+        db.createObjectStore("users", { keyPath: "id" });
+      };
+
+      request.onsuccess = (event) => {
+      status.innerText += "Database opened successfully\n";
+      const db = event.target.result;
+
+       db.onversionchange = () => {
+        db.close();
+       alert(" Database version changed in another tab. Reloading required.");
+      };
+
+      const transaction = db.transaction("users", "readwrite");
+      const store = transaction.objectStore("users");
+      store.add({ id: "E01", name: "Priya" });
+
+      transaction.oncomplete = () => {
+        status.innerText += "Transaction completed\n";
+      };
+
+      transaction.onerror = () => {
+         status.innerText += "Transaction error\n";
+      };
+    };
+
+    request.onerror = (event) => {
+      status.innerText += "Failed to open DB: " + event.target.error + "\n";
+    };
+
+     });
+     
+
+  </script>
+
+
+</body>
+
+</html>

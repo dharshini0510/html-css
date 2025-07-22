@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> History </title>
+    </head>
+
+    <body>
+
+        <button id="back" type="button"> Back </button> &nbsp;
+        <button id="forward" type="button"> Forward </button>   &nbsp;
+        <button id="go" type="button"> GO </button>
+        
+        <script>
+            const bbtn=document.getElementById("back");
+            const fbtn=document.getElementById("forward");
+            const gbtn=document.getElementById("go");
+
+            bbtn.addEventListener('click',()=>{
+                history.back(); 
+            });
+            
+             fbtn.addEventListener('click',()=>{
+                history.forward; 
+            });
+
+             gbtn.addEventListener('click',()=>{
+                history.go(-1); 
+            });
+
+            const histories = history.length;
+            console.log(`Number of histories: ${histories}`)
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Web Worker</title>
+</head>
+
+<body>
+
+
+
+  <input type="number" id="numberInput" placeholder="Enter a number" />
+  <p id="result">Result: </p>
+
+  <script>
+    const input = document.getElementById("numberInput");
+    const result = document.getElementById("result");
+
+    const myWorker = new Worker("worker.js");
+
+    input.onchange = () => {
+      myWorker.postMessage(input.value);
+      console.log("Message sent to worker");
+    };
+
+
+    myWorker.onmessage = (event) => {
+      result.textContent = event.data;
+      console.log("Message received from worker");
+    };
+  </script>
+
+</body>
+</html>

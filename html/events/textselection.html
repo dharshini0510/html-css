@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+     <title>Text selection Event</title>
+</head>
+
+<body>
+
+   <input type="text" id="myInput" value="This is example for textselection event">
+   <p>Select any text on this page</p>
+   <p id="output"></p>
+
+  <script>
+    const input = document.getElementById("myInput");
+    const output = document.getElementById("output");
+
+    input.addEventListener("select", () => {
+      const start = input.selectionStart;
+      const end = input.selectionEnd;
+      const selected = input.value.substring(start, end);
+      output.innerText = `You selected: "${selected}"`;
+    
+    });
+
+    document.addEventListener("selectionchange", () => {
+      const text = window.getSelection().toString();
+      if (text.length > 0) {
+        output.innerText = `You selected: "${text}"`;
+      }
+    });
+    
+  </script>
+
+</body>
+</html>

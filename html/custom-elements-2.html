@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Customized built-in element </title>
+</head>
+
+<body>
+
+    <button is="fancy-button">Click Me</button>
+    <div id="status"></div>
+
+<script>
+
+  const status = document.getElementById("status");
+
+  class FancyButton extends HTMLButtonElement {
+    constructor() {
+      super();
+      
+      this.style.backgroundColor = "gold";
+      this.style.color = "black";
+    }
+
+    connectedCallback() {
+      this.addEventListener("click", () => {
+        alert("Fancy button clicked!");
+      });
+    }
+
+    disconnectedCallback() {
+     status.innerText="disconnectedCallback: Removed from DOM\n";
+    }
+
+    adoptedCallback() {
+     status.innerText="adoptedCallback: Moved to a new document\n";
+    }
+  }
+
+  customElements.define("fancy-button", FancyButton, { extends: "button" });
+</script>
+
+</body>
+
+</html>
+
+

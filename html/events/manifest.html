@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Manifest Events</title>
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+  <button id="installBtn" style="display:none;">Install App</button>
+  <div id="log"></div>
+
+  <script>
+    const installBtn = document.getElementById("installBtn");
+    const log = document.getElementById("log");
+    let installPrompt;
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault(); 
+      installPrompt = e;
+      installBtn.style.display = "inline-block";
+      log.innerText = "Install prompt is ready.";
+    });
+
+  
+    installBtn.addEventListener("click", () => {
+      if (installPrompt) {
+        installPrompt.prompt(); 
+
+        installPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === "accepted") {
+            log.innerText = "User accepted the installation";
+          } else {
+            log.innerText = "User dismissed installation";
+          }
+
+          installPrompt = null;
+        });
+
+      }
+    });
+
+
+    window.addEventListener("appinstalled", () => {
+      log.innerText = "App has been installed!";
+      installBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

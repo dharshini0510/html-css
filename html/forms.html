@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title> Form tag</title> 
+</head>
+
+<body>
+    
+    <form>
+        <label for="name"> Name :</label>
+        <input type="text" id="name" name="fullname" placeholder="Enter your name" required >  <br><br>
+
+        <label for="email"> Email: </label> 
+        <input type="email" id="email" name="emailid" placeholder="Enter your valid email" required> <br><br> 
+
+        <label for="mobile"> Mobile number: </label>
+        <input type="tel" id="mobile" name="mobilenumber" pattern="[0-9]{10}" placeholder="Enter your valid mobile number" required> <br><br>
+
+        <label for="age"> Age: </label> 
+        <input type="number" id="age" name="age" min="18" placeholder="Enter your age" required> <br><br>
+
+        <label for="gender"> Gender: </label>
+        <input type="radio" id="gender" name="gender" required> Male
+        <input type="radio" id="gender" name="gender" disabled> Female <br><br>
+
+        <label for="domain"> Domain: </label>
+        <select id="domain" name="domain" required >
+            <option> Select </option>
+            <option> JLM </option>
+            <option> AIML </option>
+            <option> RPA </option>
+            <option> Dot net </option>
+        </select> <br><br>
+
+        <input type="checkbox" name="agree" required> The above terms given are correct <br><br> 
+        
+        <button type="submit"> Submit </button>
+        <button type="reset"> Reset </button> 
+    </form>
+</body>
+
+</html>

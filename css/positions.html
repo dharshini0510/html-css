@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> Positions </title>
+
+    <style>
+        .static {
+            border: 3px solid black;
+            position: static;
+            padding: 10px;
+        }
+
+        .relative {
+            border: 3px solid black;
+            position: relative;
+            left: 30px;
+            padding: 10px;
+        }
+
+        .fixed {
+            border: 3px solid black;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        .sticky {
+            border: 3px solid black;
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            background-color: aquamarine;
+        }
+
+        .relative2 {
+            border: 3px solid black;
+            position: relative;
+            height: 200px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .absolute {
+            border: 3px solid aqua;
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            background-color: lightyellow;
+            padding: 10px;
+        }
+
+        .spacer {
+            height: 1000px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="static">Code is static</div> <br>
+
+    <div class="relative">Code is relative</div> <br>
+
+    <div class="fixed">Code is fixed</div> <br>
+
+    <div class="relative2">
+        <div class="absolute">Code is absolute</div>
+    </div> <br>
+
+    <div class="sticky">Code is sticky</div>
+    <div class="spacer"> This also will be moved above sticky when scrolled </div>
+
+</body>
+
+</html>

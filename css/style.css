@@ -1,0 +1,157 @@
+/* p{
+    color: red;
+    text-align: center;
+} */
+
+.one{
+    color: green;
+    text-align: left;
+}
+
+#unique{
+    color: aqua;
+    text-align: right;
+}
+/* 
+h1, h2{
+    color: orange;
+} */
+
+:is(h1, h2){
+    color: orange;
+}
+
+/* *{
+    color: violet;
+} */
+
+.descendant p{
+    background-color: yellow;
+}
+
+.child>p{
+    background-color: aqua;
+}
+
+.nextsibling+p{
+    background-color: antiquewhite;
+}
+
+/* .subsequent~p{
+    background-color: brown;
+} */
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
+
+a.highlight:hover {
+  color: aqua
+} 
+
+.dhover {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.dhover:hover {
+  background-color: blue;
+}
+
+.tooltip{
+    height: 100px;
+    width :100px;
+    background-color: brown;
+}
+
+.tooltip p {
+  display: none;
+  padding: 20px;
+}
+
+.tooltip:hover p {
+  display: block;
+}
+
+.firstchild1 p:first-child {
+  color: blue;
+} 
+
+.firstchild2 p i:first-child {
+  color: blue;
+} 
+
+.firstchild3 p:first-child i{
+  color: blue;
+} 
+
+p.firstline1::first-line{
+    color: blue;
+}
+
+.firstline1::first-letter{
+    color: red;
+}
+
+.pbefore::before {
+  content: url(smile.jpeg);
+}
+
+.pafter::after {
+  content: url(nature.jpeg);
+}
+
+::marker { 
+  color: red;
+}
+
+::selection {
+  color: red;
+  background: yellow;
+}
+
+a[target] {
+  background-color: yellow;
+  color: white;
+}
+
+a[target="_blank"] {
+  background-color: green;
+  color:white
+}
+
+[title~="google"] {
+  border: 5px solid brown;
+}
+
+[class|="top"] {
+  background: yellow;
+}
+
+[class^="one"] {
+  background: yellow;
+}
+
+[class$="test"] {
+  background: yellow;
+}
+
+[class*="ow"] {
+  background: yellow;
+}
+
+

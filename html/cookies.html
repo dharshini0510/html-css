@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Cookies</title>
+</head>
+<body>
+
+  
+  <input type="text" id="username" placeholder="Enter your name">
+  <button id="setcookie">Set Cookie</button>
+  <button id="showcookie">Show Cookie</button>
+  <button id="checkcookie"> check Cookie </button>
+  <button id="checkvalue"> check value </button>
+  <p id="cookievalue"></p>
+
+  <script>
+
+      const name= document.getElementById('username')
+      const cset=document.getElementById('setcookie')
+      const cshow=document.getElementById('showcookie')
+      const ccheck=document.getElementById('checkcookie')
+      const vcheck=document.getElementById('checkvalue')
+      const cvalue=document.getElementById("cookievalue");
+
+      cset.addEventListener('click',()=>{
+        document.cookie = "username= " + name.value + "; max-age=3600; path=/";
+        alert("Cookie has been set!");
+      });
+
+      cshow.addEventListener("click", () => {
+           const cookies = document.cookie.split("; ");
+
+           for (let c of cookies) {
+               if (c.startsWith("username=")) {
+               const value = c.split("=")[1];
+               cvalue.textContent = "Cookie value: " + value;
+               }
+              }
+        });
+
+        ccheck.addEventListener("click", () => {
+            const cookies = document.cookie.split("; ");
+
+            if(cookies.some((c) => c.trim().startsWith("username="))){
+                 cvalue.textContent += "'username' cookie exists!"; 
+            } else{
+                  cvalue.textContent += "'username' cookie does not exist";
+            }
+           
+         });
+          
+         vcheck.addEventListener("click", () => {
+            const cookies = document.cookie.split("; ");
+
+            if(cookies.some((item) => item.includes("username=priya"))){
+                 cvalue.textContent += "The 'username' cookie has a value of 'priya'"; 
+            } else{
+                  cvalue.textContent += "The 'username' cookie does not have a value of 'priya'";
+            }
+            
+         });
+
+  </script>
+
+</body>
+</html>

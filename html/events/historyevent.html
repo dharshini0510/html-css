@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History Events</title>
+</head>
+<body>
+
+<button id="add">Add Page</button>
+<div id="log">Initial Page</div>
+
+<script>
+  const btn=document.getElementById("add");  
+  const log = document.getElementById("log");
+
+
+  window.addEventListener("popstate", (event) => {
+    log.innerText = "Pages hs been moved in history \n Page state: " + event.state ;
+  });
+
+ 
+  btn.addEventListener('click',()=>{
+     history.pushState("Page 2", "", "?page=2");
+    history.pushState("Page 3", "", "?page=3");
+    history.pushState("Page 4", "", "?page=4");
+    log.innerText = "New pages has been added";
+  })
+
+   window.addEventListener("pageshow", (event) => {
+    log.innerText = "\n Page is now visible";
+  });
+
+
+  window.addEventListener("pagehide", (event) => {
+    console.log("Page is hiiden and it is not visible");
+    log.innerText = "Page is not visible";
+    
+  });
+    
+</script>
+
+</body>
+</html>

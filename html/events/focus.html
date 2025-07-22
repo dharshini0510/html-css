@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Focus</title>
+    </head>
+    <body>
+        <form id="form"></form>
+    Email: <input type="text" placeholder="Enter ur email" /> <br>
+    Password:  <input type="password" placeholder="Enter ur password" />
+  
+      </form>
+
+     <script>
+        const password = document.querySelector('input[type="password"]');
+
+        password.addEventListener("focus", (event) => {
+       event.target.style.background = "yellow";
+       });
+ 
+       password.addEventListener("blur", (event) => {
+       event.target.style.background = "";
+        });
+
+//    const form = document.getElementById("form");
+
+//    form.addEventListener("focusin", (event) => {
+//    event.target.style.background = "yellow";
+//    });
+
+//   form.addEventListener("focusout", (event) => {
+//   event.target.style.background = "";
+//     });
+     </script>
+        
+    </body>
+</html>

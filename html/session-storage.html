@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> Session Storage </title>
+</head>
+
+<body>
+
+  <h2>Enter Your Name</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <br><br>
+
+  <button id="savebtn">Save</button>
+  <button id="showbtn">Show</button>
+  <button id="rembtn">Remove</button>
+
+  <p id="output"></p>
+
+  <input id="field" />
+
+
+
+  <script>
+    const savebtn=document.getElementById('savebtn')
+    const showbtn=document.getElementById('showbtn')
+    const removebtn=document.getElementById('rembtn')
+    const op=document.getElementById('output')
+
+    savebtn.addEventListener('click',()=>{
+    const name = document.getElementById("nameInput").value;
+    sessionStorage.setItem("UserName", name);
+      alert("Name saved!");
+    })
+
+    showbtn.addEventListener('click',()=>{
+        const savedname = sessionStorage.getItem("UserName");
+        op.innerText = savedname  ? `Hello, ${savedname}!`: "No name found";
+    })
+
+    removebtn.addEventListener('click', () => {
+      sessionStorage.removeItem('UserName');
+      op.innerText =  "Name has been removed";
+    })
+
+
+//    let field = document.getElementById("field");
+ 
+//    if (sessionStorage.getItem("autosave")) {
+//   field.value = sessionStorage.getItem("autosave");
+// }
+
+//   field.addEventListener("change", () => {
+//   sessionStorage.setItem("autosave", field.value);
+//   alert("Name saved!")
+// });
+
+//     showbtn.addEventListener('click',()=>{
+//         const savedname = sessionStorage.getItem("autoSave");
+//         op.innerText = savedname  ? `Hello, ${savedname}!`: "No name found";
+//     })
+
+//     removebtn.addEventListener('click', () => {
+//       sessionStorage.removeItem('autoSave');
+//       op.innerText =  "Name has been removed";
+//     })
+
+  </script>
+
+</body>
+</html>

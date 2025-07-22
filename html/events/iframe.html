@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title> Message event</title>
+</head>
+
+<body>
+
+  <button id="btn">Send Message</button>
+ 
+  <script>
+
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      parent.postMessage("Hello from  iframe", "*");
+    });
+
+  </script>
+
+</body>
+</html>
